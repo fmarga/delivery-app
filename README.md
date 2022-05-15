@@ -2,7 +2,7 @@
 
 ## Descrição do Projeto
 
-Projeto desenvolvido na Etapa 1 do Programa TreinaDev realizado pela [Campus Code](https://www.campuscode.com.br/), consiste em uma aplicação web responsável por gerenciar meios de transporte disponíveis para e-commerces utilizando <strong>Ruby on Rails</strong>.
+Projeto desenvolvido na Etapa 1 do Programa TreinaDev realizado pela [Campus Code](https://www.campuscode.com.br/), consiste em uma aplicação web responsável por gerenciar meios de transporte disponíveis para e-commerces utilizando <img src="http://img.shields.io/static/v1?label=Ruby%20On%20Rails%20&message=7.0.2.4&color=red&style=for-the-badge&logo=ruby"/>.
 
 Você pode clicar [aqui](https://github.com/users/fmarga/projects/1) para acompanhar o desenvolvimento do projeto
 
