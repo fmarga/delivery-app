@@ -11,9 +11,11 @@
 
   <body>
     <nav>
-      <%= link_to 'INÍCIO', root_path %>
-      <%= link_to 'TRANSPORTADORAS', root_path %>
-      <%= link_to 'LOGIN', root_path %>
+      <ul>
+        <li><%= link_to 'INÍCIO', root_path %></li>
+        <li><%= link_to 'TRANSPORTADORAS', root_path %></li>
+        <li><%= link_to 'LOGIN', root_path %></li>
+      </ul>
     </nav>
     <%= yield %>
   </body>
