@@ -1,0 +1,20 @@
+<section class="ship-comp">
+  <h1>TRANSPORTADORAS PARCEIRAS</h1>
+  <div class="ship-comp-div">
+    <% if @shipping_companies.any? %>
+      <% @shipping_companies.each do |company| %>
+        <article>
+          <h3><%= company.brand_name %></h3>
+          <dl>
+            <dt>CNPJ:</dt>
+            <dd><%= company.registration_number %></dd>
+            <dt>Localidade:</dt>
+            <dd><%= company.city %> - <%= company.state %></dd>
+          </dl>
+        </article>
+      <% end %>
+    <% else %>
+      <p>Não existem transportadoras cadastradas</p>
+    <% end %>
+  </div>
+</section>
