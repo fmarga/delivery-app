@@ -25,6 +25,6 @@ describe 'Usuário vê detalhes de uma transportadora' do
       click_on 'Entregas Já'
       click_on 'VOLTAR'
 
-      expect(current_path).to eq shipping_company_index_path
+      expect(current_path).to eq shipping_companies_path
   end
 end

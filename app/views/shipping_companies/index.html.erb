@@ -1,5 +1,8 @@
 <section class="ship-comp">
   <h1>TRANSPORTADORAS PARCEIRAS</h1>
+  <nav class="section-nav">
+    <%= link_to 'CADASTRAR TRANSPORTADORA', new_shipping_company_path %>
+  </nav>
   <div class="ship-comp-div">
     <% if @shipping_companies.any? %>
       <% @shipping_companies.each do |company| %>

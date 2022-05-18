@@ -10,7 +10,7 @@ describe 'Usuário acessa página principal de transportadoras' do
       click_on 'TRANSPORTADORAS'
     end
 
-    expect(current_path).to eq shipping_company_index_path
+    expect(current_path).to eq shipping_companies_path
     expect(page).to have_content 'TRANSPORTADORAS PARCEIRAS'
     expect(page).to have_content 'Entregas Já'
     expect(page).to have_content 'Entregas Now!'
