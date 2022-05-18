@@ -59,3 +59,26 @@ dd {
   padding: 5px;
   margin-left: 10px;
 }
+
+.notice-message {
+  max-width: 400px;
+  color: #373f51;
+  background-color: #a9bcd0;
+  border-radius: 3px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.error-form-message {
+  color: #95301e;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 10px;
+}
+
+.error-form-message li {
+  list-style: none;
+  text-align: left;
+  margin-left: 100px;
+  max-width: 500px;
+}

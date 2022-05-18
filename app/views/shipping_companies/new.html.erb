@@ -1,4 +1,11 @@
 <section class="form-ship-comp">
   <h1>CADASTRAR NOVA TRANSPORTADORA</h1>
+  <ul class="error-form-message">
+    <% if @shipping_company.errors.any? %>
+      <% @shipping_company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    <% end %>
+  </ul>
   <%= render 'form' %>
 </section>

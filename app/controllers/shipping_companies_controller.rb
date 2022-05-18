@@ -13,8 +13,12 @@ class ShippingCompaniesController < ApplicationController
 
   def create
     @shipping_company = ShippingCompany.new(shipping_company_params)
-    @shipping_company.save
-    redirect_to shipping_companies_path
+    if @shipping_company.save
+      redirect_to shipping_companies_path, notice: 'Transportadora cadastrada com sucesso!'
+    else
+      flash.now[:notice] = 'Não foi possível cadastrar transportadora'
+      render 'new'
+    end
   end
   
   private
