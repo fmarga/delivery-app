@@ -4,7 +4,7 @@
     <% if @shipping_companies.any? %>
       <% @shipping_companies.each do |company| %>
         <article>
-          <h3><%= company.brand_name %></h3>
+          <h3><%= link_to(company.brand_name, company) %></h3>
           <dl>
             <dt>CNPJ:</dt>
             <dd><%= company.registration_number %></dd>
