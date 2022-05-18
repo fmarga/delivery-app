@@ -4,4 +4,6 @@ class ShippingCompany < ApplicationRecord
   validates :registration_number, length: { is: 14 }
   validates :registration_number, numericality: { only_integer: true }
   validates :postal_code, format: { with: /\d{5}-?\d{3}/ }
+
+  has_many :vehicles
 end

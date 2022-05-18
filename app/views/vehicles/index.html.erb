@@ -1,0 +1,13 @@
+<section class="vehi-index">
+  <h1>VEÍCULOS DA NOSSA FROTA</h1>
+  <% if @vehicles.any? %>
+    <% @vehicles.each do |vehicle| %>
+      <article>
+        <h3><%= vehicle.brand %> <%= vehicle.model %></h3>
+        <p>Carga máxima: <%= vehicle.capacity %>g</p>
+      </article>
+    <% end %>
+  <% else %>
+    <p>Não existem veículos registrados nessa transportadora</p>
+  <% end %>
+</section>
