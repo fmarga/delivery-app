@@ -24,9 +24,9 @@ describe 'Usuário acessa página de veículos registrados' do
     click_on 'Entregas Já'
     click_on 'VEÍCULOS REGISTRADOS'
 
-    expect(page).to have_content 'Renault Kangoo'
+    expect(page).to have_content 'Kangoo'
     expect(page).to have_content 'Carga máxima: 700000g'
-    expect(page).to have_content 'Mercedes-Benz Sprinter Street'
+    expect(page).to have_content 'Sprinter Street'
     expect(page).to have_content 'Carga máxima: 1825000g'
   end
 
