@@ -3,9 +3,9 @@ pt-BR:
     models:
       vehicle: "Veículo"
     attributes:
-      shipping_company:
+      vehicle:
         license_plate: "Placa"
         brand: "Marca"
-        model: "model"
+        model: "Modelo"
         fabrication_year: "Ano de fabricação"
         capacity: "Capacidade"
