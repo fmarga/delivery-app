@@ -11,10 +11,32 @@
         <dd><%= @shipping_company.address %></dd>
         <dt> Localidade:</dt>
         <dd><%= @shipping_company.city %> - <%= @shipping_company.state %></dd>
-        <dt><%= link_to 'VEÍCULOS REGISTRADOS', vehicles_path %></dt>
+        <dt><%= link_to 'VEÍCULOS REGISTRADOS', shipping_company_vehicles_path(@shipping_company) %></dt>
       </dl>
     </div>
 </section>
+
+<section class="vehicles">
+  <h4>VEÍCULOS REGISTRADOS</h4>
+  <%= link_to 'Cadastrar veículo', new_shipping_company_vehicle_path(@shipping_company) %>
+  <% if @vehicles %>
+    <% @vehicles.each do |vehicle| %>
+      <p><%= vehicle.brand %> <%= vehicle.model %></p>
+      <dl>
+        <dt>Ano de fabricação:</dt>
+        <dd><%= vehicle.fabrication_year %></dd>
+        <dt>Carga máxima:</dt>
+        <dd><%= vehicle.capacity %>g</dd>
+        <dt>Placa:</dt>
+        <dd><%= vehicle.license_plate %></dd>
+      </dl>
+    <% end %>
+  <% else %>
+    <p>Não existem veículos registrados</p>
+  <% end %>
+</section>
+
+
 <div>
   <%= link_to 'VOLTAR', shipping_companies_path %>
 </div>

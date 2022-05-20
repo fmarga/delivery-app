@@ -5,7 +5,9 @@ class ShippingCompaniesController < ApplicationController
     @shipping_companies = ShippingCompany.all
   end
 
-  def show; end
+  def show
+    @vehicles = @shipping_company.vehicles unless @shipping_company.vehicles.empty?
+  end
 
   def new
     @shipping_company = ShippingCompany.new
