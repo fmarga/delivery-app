@@ -62,5 +62,27 @@ RSpec.describe Vehicle, type: :model do
         expect(result).to eq false
       end
     end
+
+    context 'length' do
+      it 'falso quando a placa não contém 7 caracteres' do
+        entregas = ShippingCompany.create(corporate_name: 'Transportes e Logística LTDA', brand_name: 'Entregas Já', registration_number: '22693970000152', email_domain: 'entregasja.com.br', address: 'Av do Transporte, 10', city: 'Porto Alegre', state: 'RS', postal_code: '96224-390')
+        kangoo = Vehicle.new(license_plate: 'LSNS4I49', brand: 'Renault', model: 'Kangoo', fabrication_year: 2018, capacity: 'a lot', shipping_company: entregas)
+
+        result = kangoo.valid?
+
+        expect(result).to eq false
+      end
+    end
+
+    context 'format' do
+      it 'falso qundo a placa estiver incompleta' do
+        entregas = ShippingCompany.create(corporate_name: 'Transportes e Logística LTDA', brand_name: 'Entregas Já', registration_number: '22693970000152', email_domain: 'entregasja.com.br', address: 'Av do Transporte, 10', city: 'Porto Alegre', state: 'RS', postal_code: '96224-390')
+        kangoo = Vehicle.new(license_plate: '9SN4I49', brand: 'Renault', model: 'Kangoo', fabrication_year: 2018, capacity: 'a lot', shipping_company: entregas)
+  
+        result = kangoo.valid?
+
+        expect(result).to eq false
+      end
+    end
   end
 end
