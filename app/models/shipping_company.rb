@@ -6,4 +6,5 @@ class ShippingCompany < ApplicationRecord
   validates :postal_code, format: { with: /\d{5}-?\d{3}/ }
 
   has_many :vehicles
+  has_many :price_settings
 end

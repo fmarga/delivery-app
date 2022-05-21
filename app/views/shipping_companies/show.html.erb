@@ -39,11 +39,22 @@
   <h4>TABELA DE PREÇOS</h4>
   <table>
     <tr>
-      <th>Peso</th>
-      <th>Volume</th>
-      <th>Preço</th>
+      <th>Peso (kg)</th>
+      <th>Volume (m³)</th>
+      <th>Preço/km</th>
     </tr>
-  </table>
+    <% if @prices %>
+      <% @prices.each do |price| %>
+        <tr>
+          <td><%= price.min_weight %> - <%= price.max_weight %></td>
+          <td><%= price.min_volume %> - <%= price.max_volume %></td>
+          <td>R$ 0,<%= price.distance_value %></td>
+        </tr>
+      <% end %>
+      </table>
+    <% else %>
+      <p>Não existem valores cadastrados</p>
+    <% end %>
 </section>
 
 

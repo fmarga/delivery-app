@@ -7,6 +7,7 @@ class ShippingCompaniesController < ApplicationController
 
   def show
     @vehicles = @shipping_company.vehicles unless @shipping_company.vehicles.empty?
+    @prices = @shipping_company.price_settings unless @shipping_company.price_settings.empty?
   end
 
   def new
