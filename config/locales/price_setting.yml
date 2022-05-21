@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      price_setting: "Configuração de preço"
+    attributes:
+      price_setting:
+        min_weight: "Peso mínimo"
+        max_weight: "Peso máximo"
+        min_volume: "Volume mínimo"
+        max_volume: "Volume máximo"
+        distance_value: "Valor por distância"
