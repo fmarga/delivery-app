@@ -10,23 +10,23 @@
 
 <%= form_with model: [:shipping_company, @vehicle] do |f| %>
   <div>
-    <%= f.label :license_plate, 'Placa' %>
+    <%= f.label :license_plate %>
     <%= f.text_field :license_plate %>
   </div>
   <div>
-    <%= f.label :brand, 'Marca' %>
+    <%= f.label :brand %>
     <%= f.text_field :brand %>
   </div>
   <div>
-    <%= f.label :model, 'Modelo' %>
+    <%= f.label :model %>
     <%= f.text_field :model %>
   </div>
   <div>
-    <%= f.label :fabrication_year, 'Ano de fabricação' %>
+    <%= f.label :fabrication_year %>
     <%= f.number_field :fabrication_year %>
   </div>
   <div>
-    <%= f.label :capacity, 'Capacidade' %>
+    <%= f.label :capacity %>
     <%= f.number_field :capacity %>
   </div>
   <div>
