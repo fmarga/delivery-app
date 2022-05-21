@@ -1,0 +1,33 @@
+<h1>Cadastro para intervalo de preço</h1>
+<ul class="error-form-message">
+  <% if @price.errors.any? %>
+    <% @price.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  <% end %>
+</ul>
+<%= form_with(model: [:shipping_company, @price]) do |f| %>
+  <div>
+    <%= f.label :min_weight %>
+    <%= f.number_field :min_weight %>
+  </div>
+  <div>
+    <%= f.label :max_weight %>
+    <%= f.number_field :max_weight %>
+  </div>
+  <div>
+    <%= f.label :min_volume %>
+    <%= f.number_field :min_volume %>
+  </div>
+  <div>
+    <%= f.label :max_volume %>
+    <%= f.number_field :max_volume %>
+  </div>
+  <div>
+    <%= f.label :distance_value %>
+    <%= f.number_field :distance_value %>
+  </div>
+  <div>
+    <%= f.submit 'Cadastrar' %>
+  </div>
+<% end %>
