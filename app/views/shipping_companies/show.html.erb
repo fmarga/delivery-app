@@ -35,6 +35,7 @@
     <p>Não existem veículos registrados</p>
   <% end %>
 </section>
+
 <section class="prices">
   <h4>TABELA DE PREÇOS</h4>
   <%= link_to 'Cadastrar preço', new_shipping_company_price_setting_path(@shipping_company) %>
@@ -58,6 +59,26 @@
   </table>
 </section>
 
+<section class="delivery_time">
+  <h4>TABELA DE PRAZOS</h4>
+  <%= link_to 'Cadastrar prazo', new_shipping_company_delivery_time_path(@shipping_company) %>
+  <% if @delivery_times %>
+    <table>
+      <tr>
+        <th>Distância (km)</th>
+        <th>Prazo (dias úteis)</th>
+      </tr>
+      <% @delivery_times.each do |time| %>
+        <tr>
+          <th><%= time.min_distance %> - <%= time.max_distance %></th>
+          <th><%= time.time_delivery %></th>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <p>Não existem prazos de entrega cadastrados</p>
+  <% end %>
+</section>
 
 <div>
   <%= link_to 'VOLTAR', shipping_companies_path %>

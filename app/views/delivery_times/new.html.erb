@@ -1,0 +1,27 @@
+<h1>Cadastro de prazos</h1>
+
+<ul class="error-form-message">
+  <% if @delivery_time.errors.any? %>
+    <% @delivery_time.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= form_with(model: [@shipping_company, @delivery_time]) do |f| %>
+  <div>
+    <%= f.label :min_distance %>
+    <%= f.number_field :min_distance %>
+  </div>
+  <div>
+    <%= f.label :max_distance %>
+    <%= f.number_field :max_distance %>
+  </div>
+  <div>
+    <%= f.label :time_delivery %>
+    <%= f.number_field :time_delivery %>
+  </div>
+  <div>
+    <%= f.submit 'Cadastrar' %>
+  </div>
+<% end %>
