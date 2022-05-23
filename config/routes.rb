@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :admins, path: 'admins', controllers: {
+    sessions: 'admins/sessions'
+  }
+  devise_for :users, path: 'users', controllers: {
+    sessions: 'users/sessions'
+  }
   root to: 'home#index'
   resources :shipping_companies, only: %i[index show new create] do
     resources :vehicles, only: %i[new create]
