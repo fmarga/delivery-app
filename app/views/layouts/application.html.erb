@@ -14,10 +14,16 @@
       <ul>
         <li><%= link_to 'INÍCIO', root_path %></li>
         <li><%= link_to 'TRANSPORTADORAS', shipping_companies_path %></li>
-        <li><%= link_to 'LOGIN', root_path %></li>
+        <% if user_signed_in? %>
+          <li><%= current_user.email %></li>
+          <li><%= button_to 'SAIR', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'LOGIN', new_user_session_path %></li>
+        <% end %>
       </ul>
     </nav>
     <div class="notice-message">
+      <%= alert %>
       <%= notice %>
     </div>
     <%= yield %>
