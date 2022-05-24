@@ -2,7 +2,9 @@ require 'rails_helper'
 
 describe 'Usuário cadastra nova transportadora' do
   it 'a partir da página de transportadoras' do
+    admin = Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'admin')
 
+    login_as(admin)
     visit root_path
     click_on 'TRANSPORTADORAS'
     click_on 'CADASTRAR TRANSPORTADORA'
@@ -12,23 +14,23 @@ describe 'Usuário cadastra nova transportadora' do
   end
   
   it 'com sucesso' do
+    admin = Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'admin')
 
+    login_as(admin)
     visit root_path
     click_on 'TRANSPORTADORAS'
     within('.section-nav') do
       click_on 'CADASTRAR TRANSPORTADORA'
     end
-    within('form') do
-      fill_in 'Razão Social', with: 'Serviços de Entregas LTDA'
-      fill_in 'Nome Fantasia', with: 'Entregas Now!'
-      fill_in 'CNPJ', with: '13053544000163'
-      fill_in 'Domínio de e-mail', with: 'entregasnow.com.br'
-      fill_in 'Endereço', with: 'Av do Transporte, 20'
-      fill_in 'Cidade', with: 'Porto Alegre'
-      fill_in 'Estado', with: 'RS'
-      fill_in 'CEP', with: '96493-570'
-      click_on 'ENVIAR'
-    end
+    fill_in 'Razão Social', with: 'Serviços de Entregas LTDA'
+    fill_in 'Nome Fantasia', with: 'Entregas Now!'
+    fill_in 'CNPJ', with: '13053544000163'
+    fill_in 'Domínio de e-mail', with: 'entregasnow.com.br'
+    fill_in 'Endereço', with: 'Av do Transporte, 20'
+    fill_in 'Cidade', with: 'Porto Alegre'
+    fill_in 'Estado', with: 'RS'
+    fill_in 'CEP', with: '96493-570'
+    click_on 'ENVIAR'
 
     expect(page).to have_content 'Transportadora cadastrada com sucesso!'
     within('h3') do
@@ -41,21 +43,21 @@ describe 'Usuário cadastra nova transportadora' do
   end
 
   it 'com dados incompletos ou inválidos' do
+    admin = Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'admin')
 
+    login_as(admin)
     visit root_path
     click_on 'TRANSPORTADORAS'
     click_on 'CADASTRAR TRANSPORTADORA'
-    within('form') do
-      fill_in 'Razão Social', with: ''
-      fill_in 'Nome Fantasia', with: 'Entregas Now!'
-      fill_in 'CNPJ', with: '130535440001'
-      fill_in 'Domínio de e-mail', with: ''
-      fill_in 'Endereço', with: 'Av do Transporte, 20'
-      fill_in 'Cidade', with: 'Porto Alegre'
-      fill_in 'Estado', with: 'RS'
-      fill_in 'CEP', with: '96493-570'
-      click_on 'ENVIAR'
-    end
+    fill_in 'Razão Social', with: ''
+    fill_in 'Nome Fantasia', with: 'Entregas Now!'
+    fill_in 'CNPJ', with: '130535440001'
+    fill_in 'Domínio de e-mail', with: ''
+    fill_in 'Endereço', with: 'Av do Transporte, 20'
+    fill_in 'Cidade', with: 'Porto Alegre'
+    fill_in 'Estado', with: 'RS'
+    fill_in 'CEP', with: '96493-570'
+    click_on 'ENVIAR'
 
     expect(page).to have_content 'Não foi possível cadastrar transportadora'
     expect(page).to have_content 'Razão Social não pode ficar em branco'
