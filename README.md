@@ -13,6 +13,7 @@ Você pode clicar [aqui](https://github.com/users/fmarga/projects/1) para acompa
 - [RSpec](https://github.com/rspec/rspec-rails): na versão 3.11.0 para a criação de testes unitários
 - [Capybara](https://github.com/teamcapybara/capybara): na versão 3.36.0 para a criação de testes de sistema
 - [i18n](https://guides.rubyonrails.org/i18n.html): utilizada para internacionalização da aplicação
+- [Devise](https://github.com/heartcombo/devise): autenticação e autorização de usuários/administradores
 
 ## Como rodar a aplicação
 
