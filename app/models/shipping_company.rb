@@ -8,4 +8,5 @@ class ShippingCompany < ApplicationRecord
   has_many :vehicles
   has_many :price_settings
   has_many :delivery_times
+  has_many :users
 end

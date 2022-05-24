@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Usuário cadastra nova transportadora' do
+describe 'Administrador cadastra nova transportadora' do
   it 'a partir da página de transportadoras' do
     admin = Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'admin')
 

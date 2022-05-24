@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Usuário acessa página principal de transportadoras' do
+describe 'Administrador acessa página principal de transportadoras' do
 
   it 'se estiver autenticado' do
 

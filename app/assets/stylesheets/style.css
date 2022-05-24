@@ -14,7 +14,7 @@ nav ul {
   display: flex;
   margin: 10px;
   padding: 10px;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 nav ul li {
@@ -25,6 +25,14 @@ nav ul li {
 nav a {
   text-decoration: none;
   color: #b35342;
+  background-color: #e9ebed;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+nav a:hover {
+  background-color: #b35342;
+  color: #e9ebed;
 }
 
 .header h1 {
