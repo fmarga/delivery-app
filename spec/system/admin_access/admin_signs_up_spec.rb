@@ -4,7 +4,7 @@ describe 'Administrador se cadastra' do
   it 'com sucesso' do
 
     visit root_path
-    click_on 'ENTRAR COMO ADMINISTRADOR'
+    click_on 'ADMINISTRADOR'
     click_on 'Criar uma nova conta'
     fill_in 'Nome de usuário', with: 'fmarga'
     fill_in 'E-mail', with: 'admin@gmail.com'

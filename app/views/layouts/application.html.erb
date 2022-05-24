@@ -24,7 +24,7 @@
           <li><%= current_admin.username %>
           <li><%= button_to 'SAIR', destroy_admin_session_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to 'ENTRAR COMO ADMINISTRADOR', new_admin_session_path %>
+          <li><%= link_to 'ADMINISTRADOR', new_admin_session_path %>
         <% end %>
       </ul>
     </nav>
