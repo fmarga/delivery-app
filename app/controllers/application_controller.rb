@@ -3,11 +3,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def devise_parameter_sanitizer
-    if resource_class == Admin
-      Admin::ParameterSanitizer.new(Admin, :admin, params)
-    else
-      super # Use the default one
-    end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
   end
 end
