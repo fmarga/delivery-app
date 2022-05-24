@@ -1,5 +1,6 @@
 class ShippingCompaniesController < ApplicationController
   before_action :set_shipping_company, only: [:show]
+  before_action :authenticate_admin!, only: [:index] 
 
   def index
     @shipping_companies = ShippingCompany.all
