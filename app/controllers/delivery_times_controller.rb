@@ -1,6 +1,6 @@
 class DeliveryTimesController < ApplicationController
   before_action :set_shipping_company
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!
 
   def new
     @delivery_time = @shipping_company.delivery_times.new

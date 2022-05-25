@@ -1,6 +1,6 @@
 class VehiclesController < ApplicationController
   before_action :set_shipping_company
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!
 
   def new
     @vehicle = @shipping_company.vehicles.new
