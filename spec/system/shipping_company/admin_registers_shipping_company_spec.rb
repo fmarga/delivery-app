@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Administrador cadastra nova transportadora' do
   it 'a partir da página de transportadoras' do
-    admin = Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'admin')
+    admin = Admin.create!(email: 'admin@gmail.com', password: 'password')
 
     login_as(admin, :scope => :admin)
     visit root_path
@@ -14,7 +14,7 @@ describe 'Administrador cadastra nova transportadora' do
   end
   
   it 'com sucesso' do
-    admin = Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'admin')
+    admin = Admin.create!(email: 'admin@gmail.com', password: 'password')
 
     login_as(admin, :scope => :admin)
     visit root_path
@@ -43,7 +43,7 @@ describe 'Administrador cadastra nova transportadora' do
   end
 
   it 'com dados incompletos ou inválidos' do
-    admin = Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'admin')
+    admin = Admin.create!(email: 'admin@gmail.com', password: 'password')
 
     login_as(admin, :scope => :admin)
     visit root_path

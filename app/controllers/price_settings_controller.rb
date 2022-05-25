@@ -1,5 +1,6 @@
 class PriceSettingsController < ApplicationController
   before_action :set_shipping_company
+  before_action :authenticate_user!, only: [:new, :create]
 
   def new
     @price = @shipping_company.price_settings.new
