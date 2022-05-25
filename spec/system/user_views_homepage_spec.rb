@@ -14,10 +14,7 @@ describe 'Usuário acessa a página inicial' do
 
     visit root_path
 
-    within('nav')do
-      expect(page).to have_link 'INÍCIO'
-      expect(page).to have_link 'TRANSPORTADORAS'
-      expect(page).to have_link 'LOGIN'
-    end
+    expect(page).to have_link 'USUÁRIO'
+    expect(page).to have_link 'ADMINISTRADOR'
   end
 end

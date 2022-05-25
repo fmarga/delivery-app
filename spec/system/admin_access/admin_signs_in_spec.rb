@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe 'Administrador se autentica' do
   it 'com sucesso' do
-    Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'um_admin')
+    Admin.create!(email: 'admin@sistemadefrete.com.br', password: 'password')
 
     visit root_path
     click_on 'ADMINISTRADOR'
-    fill_in 'E-mail', with: 'admin@gmail.com'
+    fill_in 'E-mail', with: 'admin@sistemadefrete.com.br'
     fill_in 'Senha', with: 'password'
     click_on 'Entrar'
 
@@ -15,11 +15,11 @@ describe 'Administrador se autentica' do
   end 
 
   it 'e faz logout' do
-    Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'um_admin')
+    Admin.create!(email: 'admin@sistemadefrete.com.br', password: 'password')
 
     visit root_path
     click_on 'ADMINISTRADOR'
-    fill_in 'E-mail', with: 'admin@gmail.com'
+    fill_in 'E-mail', with: 'admin@sistemadefrete.com.br'
     fill_in 'Senha', with: 'password'
     click_on 'Entrar'
     click_on 'SAIR'

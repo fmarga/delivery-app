@@ -3,9 +3,10 @@ require 'rails_helper'
 describe 'Usuário cadastra intervalo de prazo de entrega' do
   it 'com sucesso' do
     entregas = ShippingCompany.create!(corporate_name: 'Transportes e Logística LTDA', brand_name: 'Entregas Já', registration_number: '22693970000152', email_domain: 'entregasja.com.br', address: 'Av do Transporte, 10', city: 'Porto Alegre', state: 'RS', postal_code: '96224-390')
-
+    user = User.create!(email: 'email@entregasja.com.br', password: 'password')
+    
+    login_as(user, :scope => :user)
     visit root_path
-    click_on 'TRANSPORTADORAS'
     click_on 'Entregas Já'
     within('.delivery_time') do
       click_on 'Cadastrar prazo'
@@ -26,9 +27,10 @@ describe 'Usuário cadastra intervalo de prazo de entrega' do
 
   it 'com dados incompletos ou inválidos' do
     entregas = ShippingCompany.create!(corporate_name: 'Transportes e Logística LTDA', brand_name: 'Entregas Já', registration_number: '22693970000152', email_domain: 'entregasja.com.br', address: 'Av do Transporte, 10', city: 'Porto Alegre', state: 'RS', postal_code: '96224-390')
-
+    user = User.create!(email: 'email@entregasja.com.br', password: 'password')
+    
+    login_as(user, :scope => :user)
     visit root_path
-    click_on 'TRANSPORTADORAS'
     click_on 'Entregas Já'
     click_on 'Cadastrar prazo'
     fill_in 'Distância mínima', with: ''

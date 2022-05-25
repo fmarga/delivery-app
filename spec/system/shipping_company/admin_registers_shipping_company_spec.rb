@@ -4,7 +4,7 @@ describe 'Administrador cadastra nova transportadora' do
   it 'a partir da página de transportadoras' do
     admin = Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'admin')
 
-    login_as(admin)
+    login_as(admin, :scope => :admin)
     visit root_path
     click_on 'TRANSPORTADORAS'
     click_on 'CADASTRAR TRANSPORTADORA'
@@ -16,7 +16,7 @@ describe 'Administrador cadastra nova transportadora' do
   it 'com sucesso' do
     admin = Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'admin')
 
-    login_as(admin)
+    login_as(admin, :scope => :admin)
     visit root_path
     click_on 'TRANSPORTADORAS'
     within('.section-nav') do
@@ -45,7 +45,7 @@ describe 'Administrador cadastra nova transportadora' do
   it 'com dados incompletos ou inválidos' do
     admin = Admin.create!(email: 'admin@gmail.com', password: 'password', username: 'admin')
 
-    login_as(admin)
+    login_as(admin, :scope => :admin)
     visit root_path
     click_on 'TRANSPORTADORAS'
     click_on 'CADASTRAR TRANSPORTADORA'
