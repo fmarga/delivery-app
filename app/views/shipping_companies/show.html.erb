@@ -1,7 +1,6 @@
 <section class="detail-ship-comp">
-  <h1>TRANSPORTADORAS PARCEIRAS</h1>
     <div>
-      <h3>Transportadora <%= @shipping_company.brand_name %></h3>
+      <h1>Transportadora <%= @shipping_company.brand_name %></h1>
       <dl>
         <dt> Razão Social:</dt>
         <dd><%= @shipping_company.corporate_name %></dd>
@@ -11,7 +10,6 @@
         <dd><%= @shipping_company.address %></dd>
         <dt> Localidade:</dt>
         <dd><%= @shipping_company.city %> - <%= @shipping_company.state %></dd>
-        <dt><%= link_to 'VEÍCULOS REGISTRADOS', shipping_company_vehicles_path(@shipping_company) %></dt>
       </dl>
     </div>
 </section>
@@ -20,17 +18,24 @@
   <h4>VEÍCULOS REGISTRADOS</h4>
   <%= link_to 'Cadastrar veículo', new_shipping_company_vehicle_path(@shipping_company) %>
   <% if @vehicles %>
-    <% @vehicles.each do |vehicle| %>
-      <p><%= vehicle.brand %> <%= vehicle.model %></p>
-      <dl>
-        <dt>Ano de fabricação:</dt>
-        <dd><%= vehicle.fabrication_year %></dd>
-        <dt>Carga máxima:</dt>
-        <dd><%= vehicle.capacity %>g</dd>
-        <dt>Placa:</dt>
-        <dd><%= vehicle.license_plate %></dd>
-      </dl>
-    <% end %>
+    <table>
+      <% @vehicles.each do |vehicle| %>
+        <tr>
+          <th>Modelo</th>
+          <th>Marca</th>
+          <th>Ano de fabricação</th>
+          <th>Placa</th>
+          <th>Carga máxima (kg)</th>
+        <tr>
+        <tr>
+          <td><%= vehicle.model %></td>
+          <td><%= vehicle.brand %></td>
+          <td><%= vehicle.fabrication_year %></td>
+          <td><%= vehicle.license_plate %></td>
+          <td><%= vehicle.capacity %></td>
+        </tr>
+      <% end %>
+    </table>
   <% else %>
     <p>Não existem veículos registrados</p>
   <% end %>
@@ -48,9 +53,9 @@
     <% if @prices %>
       <% @prices.each do |price| %>
         <tr>
-          <td><%= price.min_weight %> - <%= price.max_weight %></td>
-          <td><%= price.min_volume %> - <%= price.max_volume %></td>
-          <td>R$ 0,<%= price.distance_value %></td>
+          <td><%= "#{price.min_weight} - #{price.max_weight}" %></td>
+          <td><%= "#{price.min_volume} - #{price.max_volume}" %></td>
+          <td><%= number_to_currency(price.distance_value / 100.to_d, separator: ",", unit: "R$") %></td>
         </tr>
       <% end %>
     <% else %>
@@ -62,22 +67,23 @@
 <section class="delivery_time">
   <h4>TABELA DE PRAZOS</h4>
   <%= link_to 'Cadastrar prazo', new_shipping_company_delivery_time_path(@shipping_company) %>
-  <% if @delivery_times %>
+  
     <table>
       <tr>
         <th>Distância (km)</th>
         <th>Prazo (dias úteis)</th>
       </tr>
-      <% @delivery_times.each do |time| %>
-        <tr>
-          <th><%= time.min_distance %> - <%= time.max_distance %></th>
-          <th><%= time.time_delivery %></th>
-        </tr>
+      <% if @delivery_times %>
+        <% @delivery_times.each do |time| %>
+          <tr>
+            <td><%= "#{time.min_distance} - #{time.max_distance}" %></td>
+            <td><%= time.time_delivery %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <p>Não existem prazos de entrega cadastrados</p>
       <% end %>
     </table>
-  <% else %>
-    <p>Não existem prazos de entrega cadastrados</p>
-  <% end %>
 </section>
 
 <div>

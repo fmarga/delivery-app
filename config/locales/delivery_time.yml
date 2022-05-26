@@ -4,6 +4,6 @@ pt-BR:
       delivery_time: "Prazo de entrega"
     attributes:
       delivery_time:
-        min_distance: "Distância mínima"
-        max_distance: "Distância máxima"
-        time_delivery: "Prazo"
+        min_distance: "Distância mínima (km)"
+        max_distance: "Distância máxima (km)"
+        time_delivery: "Prazo (dias úteis)"

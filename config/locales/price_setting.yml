@@ -4,8 +4,8 @@ pt-BR:
       price_setting: "Configuração de preço"
     attributes:
       price_setting:
-        min_weight: "Peso mínimo"
-        max_weight: "Peso máximo"
-        min_volume: "Volume mínimo"
-        max_volume: "Volume máximo"
-        distance_value: "Valor por distância"
+        min_weight: "Peso mínimo (kg)"
+        max_weight: "Peso máximo (kg)"
+        min_volume: "Volume mínimo (m³)"
+        max_volume: "Volume máximo (m³)"
+        distance_value: "Valor por distância (Preço/km)"

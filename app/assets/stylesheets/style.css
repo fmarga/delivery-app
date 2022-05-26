@@ -22,7 +22,7 @@ nav ul li {
   margin: 0 5px;
 }
 
-nav a {
+nav a, a {
   text-decoration: none;
   color: #b35342;
   background-color: #e9ebed;
@@ -30,9 +30,13 @@ nav a {
   border-radius: 3px;
 }
 
-nav a:hover {
+nav a:hover, a:hover {
   background-color: #b35342;
   color: #e9ebed;
+}
+
+a {
+  margin: 10px;
 }
 
 .header h1 {
@@ -53,6 +57,15 @@ section {
 section h1 {
   padding-bottom: 15px;
   color: #373f51;
+  text-align: center;
+}
+
+section h4 {
+  padding-bottom: 15px;
+}
+
+.detail-ship-comp {
+  text-align: left;
 }
 
 article {
@@ -66,6 +79,22 @@ article {
 dd {
   padding: 5px;
   margin-left: 10px;
+}
+
+table {
+  width: 100%;
+  padding-top: 15px;
+}
+
+table tr th {
+  background-color: #b35342;
+  border: 1px solid #95301e;
+  color: #d8dbe2;
+  font-weight: 300;
+}
+
+table tr td {
+  border: 1px solid #95301e;
 }
 
 .notice-message {
