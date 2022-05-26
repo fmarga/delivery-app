@@ -2,11 +2,12 @@ require 'rails_helper'
 
 describe 'Usuário se autentica' do
   it 'com sucesso' do
-    User.create!(email: 'teste@gmail.com', password: 'password')
+    ShippingCompany.create!(corporate_name: 'Transportes e Logística LTDA', brand_name: 'Entregas Já', registration_number: '22693970000152', email_domain: 'entregasja.com.br', address: 'Av do Transporte, 10', city: 'Porto Alegre', state: 'RS', postal_code: '96224-390')
+    User.create!(email: 'teste@entregasja.com.br', password: 'password')
 
     visit root_path
     click_on 'USUÁRIO'
-    fill_in 'E-mail', with: 'teste@gmail.com'
+    fill_in 'E-mail', with: 'teste@entregasja.com.br'
     fill_in 'Senha', with: 'password'
     click_on 'Entrar'
 
@@ -15,11 +16,12 @@ describe 'Usuário se autentica' do
   end
 
   it 'e faz logout' do
-    User.create!(email: 'teste@gmail.com', password: 'password')
+    ShippingCompany.create!(corporate_name: 'Transportes e Logística LTDA', brand_name: 'Entregas Já', registration_number: '22693970000152', email_domain: 'entregasja.com.br', address: 'Av do Transporte, 10', city: 'Porto Alegre', state: 'RS', postal_code: '96224-390')
+    User.create!(email: 'teste@entregasja.com.br', password: 'password')
 
     visit root_path
     click_on 'USUÁRIO'
-    fill_in 'E-mail', with: 'teste@gmail.com'
+    fill_in 'E-mail', with: 'teste@entregasja.com.br'
     fill_in 'Senha', with: 'password'
     click_on 'Entrar'
     click_on 'SAIR'
