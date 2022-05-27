@@ -38,7 +38,7 @@ describe 'Usuário cadastra intervalo de prazo de entrega' do
     fill_in 'Prazo', with: ''
     click_on 'Cadastrar'
 
-    expect(page).to have_content 'Distância mínima não pode ficar em branco'
-    expect(page).to have_content 'Prazo não pode ficar em branco'
+    expect(page).to have_content 'Distância mínima (km) não pode ficar em branco'
+    expect(page).to have_content 'Prazo (dias úteis) não pode ficar em branco'
   end
 end

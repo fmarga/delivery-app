@@ -9,7 +9,7 @@ describe 'Usuário vê área de preços' do
     visit root_path
     click_on 'Entregas Já'
 
-    within('h3') do
+    within('h1') do
       expect(page).to have_content 'Transportadora Entregas Já'
     end
     within('.prices') do
@@ -31,7 +31,7 @@ describe 'Usuário vê área de preços' do
     click_on 'Entregas Já'
 
     expect(page).to have_content 'TABELA DE PREÇOS'
-    within('table') do
+    within('.prices table') do
       expect(page).to have_content 'Peso (kg)'
       expect(page).to have_content 'Volume (m³)'
       expect(page).to have_content 'Preço/km'

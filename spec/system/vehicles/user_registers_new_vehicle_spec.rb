@@ -13,13 +13,16 @@ describe 'Usuário cadastra um novo veículo' do
     fill_in 'Marca', with: 'Renault'
     fill_in 'Modelo', with: 'Kangoo'
     fill_in 'Ano de fabricação', with: '2018'
-    fill_in 'Capacidade', with: '700000'
+    fill_in 'Capacidade', with: '700'
     click_on 'Cadastrar'
 
     expect(page).to have_content 'Veículo cadastrado com sucesso'
-    expect(page).to have_content 'Renault Kangoo'
-    expect(page).to have_content 'Ano de fabricação: 2018'
-    expect(page).to have_content 'Carga máxima: 700000g'
+    within('.vehicles table') do 
+      expect(page).to have_content 'Renault'
+      expect(page).to have_content 'Kangoo'
+      expect(page).to have_content '2018'
+      expect(page).to have_content '700'
+    end
   end
 
   it 'com dados incompletos' do

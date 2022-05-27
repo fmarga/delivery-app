@@ -11,11 +11,14 @@ describe 'Usuário acessa página da transportadora' do
     visit root_path
     click_on 'Entregas Já'
 
-    expect(page).to have_content 'VEÍCULOS REGISTRADOS'
-    expect(page).to have_content 'Renault Kangoo'
-    expect(page).to have_content 'Ano de fabricação: 2018'
-    expect(page).to have_content 'Mercedes-Benz Sprinter Street'
-    expect(page).to have_content 'Ano de fabricação: 2021'
+    within('.vehicles table') do
+      expect(page).to have_content 'Renault'
+      expect(page).to have_content 'Kangoo'
+      expect(page).to have_content '2018'
+      expect(page).to have_content 'Mercedes-Benz'
+      expect(page).to have_content 'Sprinter Street'
+      expect(page).to have_content '2021'
+    end
   end
 
   it 'e não existem veículos registrados' do

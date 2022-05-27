@@ -19,7 +19,7 @@ describe 'Usuário registra intervalo de preço' do
     click_on 'Cadastrar'
 
     expect(page).to have_content 'Intervalo de preço cadastrado com sucesso!'
-    within('table') do
+    within('.prices table') do
       expect(page).to have_content '1 - 5'
       expect(page).to have_content '1 - 10'
       expect(page).to have_content 'R$ 0,50'
@@ -43,7 +43,7 @@ describe 'Usuário registra intervalo de preço' do
     fill_in 'Valor por distância', with: 50
     click_on 'Cadastrar'
 
-    expect(page).to have_content 'Peso mínimo não pode ficar em branco'
-    expect(page).to have_content 'Volume máximo não pode ficar em branco'
+    expect(page).to have_content 'Peso mínimo (kg) não pode ficar em branco'
+    expect(page).to have_content 'Volume máximo (m³) não pode ficar em branco'
   end
 end
