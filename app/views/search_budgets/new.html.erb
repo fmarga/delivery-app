@@ -1,0 +1,26 @@
+<h1>Consulta de preços</h1>
+<%= form_with(model: @budget) do |f| %>
+  <div>
+    <%= f.label :heigth, 'Altura (cm)' %>
+    <%= f.number_field :heigth %>
+  </div>
+  <div>
+    <%= f.label :width, 'Largura (cm)' %>
+    <%= f.number_field :width %>
+  </div>
+  <div>
+    <%= f.label :depth, 'Profundidade (cm)' %>
+    <%= f.number_field :depth %>
+  </div>
+  <div>
+    <%= f.label :weight, 'Peso (kg)' %>
+    <%= f.number_field :weight %>
+  </div>
+  <div>
+    <%= f.label :distance, 'Distância (km)' %>
+    <%= f.number_field :distance %>
+  </div>
+  <div>
+    <%= f.submit 'Buscar' %>
+  </div>
+<% end %>

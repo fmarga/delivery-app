@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      search_budget: "Consulta de orçamento"
+    attributes:
+      search_budget:
+        height: "Altura (cm)"
+        width: "Largura (cm)"
+        depth: "Profundidade (cm)"
+        weight: "Peso (kg)"
+        volume: "Volume (m³)"
+        distance: "Distância (km)"

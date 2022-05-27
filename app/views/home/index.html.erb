@@ -8,4 +8,9 @@
       </ul>
     </nav>
   <% end %>
+  <% if admin_signed_in? %>
+    <div class="budget-btn">
+      <%= link_to 'Realizar orçamento', new_search_budget_path %>
+    </div>
+  <% end %>
 </header>

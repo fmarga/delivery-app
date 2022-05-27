@@ -5,4 +5,5 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, format: { with: /[a-zA-Z0-9]+@sistemadefrete.com.br\z/ }
+  has_many :search_budgets
 end

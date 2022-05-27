@@ -119,3 +119,13 @@ table tr td {
   margin-left: 100px;
   max-width: 500px;
 }
+
+.budget-btn {
+  text-align: center;
+  padding: 10px;
+}
+
+.budget-btn a {
+  padding: 10px;
+  font-size: 1.2rem;
+}
