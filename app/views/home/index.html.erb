@@ -12,5 +12,24 @@
     <div class="budget-btn">
       <%= link_to 'Realizar orçamento', new_search_budget_path %>
     </div>
+    <section>
+      <h3>ORÇAMENTOS ANTERIORES:</h3>
+      <table>
+        <tr>
+          <th>No. da busca</th>
+          <th>Pessoa responsável</th>
+        </tr>
+        <% if @search_budgets.present? %>
+          <% @search_budgets.each do |search| %>
+            <tr>
+              <td><%= link_to search.id, search %>
+              <td><%= search.admin.email %>
+            </tr>
+          <% end %>
+        <% else %>
+          <p>Não existem orçamentos realizados</p>
+        <% end %>
+      </table>
+    </section>
   <% end %>
 </header>

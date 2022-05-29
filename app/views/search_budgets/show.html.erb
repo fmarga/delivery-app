@@ -1,4 +1,4 @@
-<h1>Consulta de preço número:</h1>
+<h1>Consulta de preço número: <%= @budget.id %> </h1>
 <div>
   <p>Volume - <%= number_with_precision(@budget.volume, precision: 3, significant: true) %> m³</p>
   <p>Peso - <%= number_with_precision(@budget.weight, precision: 3, significant: true) %> kg</p>

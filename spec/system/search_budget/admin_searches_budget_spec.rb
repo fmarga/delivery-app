@@ -47,8 +47,8 @@ describe 'Administrador faz busca de orçamentos' do
 
     expect(page).to have_content 'Pesquisa realizada com sucesso'
     expect(page).to have_content 'Consulta de preço número:'
-    expect(page).to have_content 'Volume - 1 m³'
-    expect(page).to have_content 'Peso - 10 kg'
+    expect(page).to have_content 'Volume - 1,00 m³'
+    expect(page).to have_content 'Peso - 10,0 kg'
     expect(page).to have_content 'Distância - 200km'
     within('table') do
       expect(page).to have_content 'Transportadora'
@@ -82,7 +82,7 @@ describe 'Administrador faz busca de orçamentos' do
 
     expect(page).to have_content 'Pesquisa realizada com sucesso'
     expect(page).to have_content 'Consulta de preço número:'
-    expect(page).to have_content 'Volume - 125000 m³'
+    expect(page).to have_content 'Volume - 125.000 m³'
     expect(page).to have_content 'Peso - 900 kg'
     expect(page).to have_content 'Distância - 200km'
     expect(page).to have_content 'Não existem transportadoras disponíveis para o seu pedido'
