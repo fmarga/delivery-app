@@ -2,15 +2,15 @@
 <%= form_with(model: @budget) do |f| %>
   <div>
     <%= f.label :height, 'Altura (m)' %>
-    <%= f.number_field :height %>
+    <%= f.number_field :height, step: 0.5 %>
   </div>
   <div>
     <%= f.label :width, 'Largura (m)' %>
-    <%= f.number_field :width %>
+    <%= f.number_field :width, step: 0.5 %>
   </div>
   <div>
     <%= f.label :depth, 'Profundidade (m)' %>
-    <%= f.number_field :depth %>
+    <%= f.number_field :depth, step: 0.5 %>
   </div>
   <div>
     <%= f.label :weight, 'Peso (kg)' %>

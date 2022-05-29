@@ -37,7 +37,7 @@ class SearchBudgetsController < ApplicationController
   end
 
   def weight_ranges(budget)
-    weight_ranges = PriceSetting.where("min_weight <= ? AND max_weight >= ? AND min_volume <= ? AND max_volume >= ?", budget.weight, budget.weight, budget.volume, budget.volume)
+    PriceSetting.where("min_weight <= ? AND max_weight >= ? AND min_volume <= ? AND max_volume >= ?", budget.weight, budget.weight, budget.volume, budget.volume)
   end
 
   def delivery_time_range(budget)

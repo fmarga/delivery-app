@@ -1,7 +1,7 @@
 <h1>Consulta de preço número:</h1>
 <div>
-  <p>Volume - <%= @budget.volume %> m³</p>
-  <p>Peso - <%= @budget.weight %> kg</p>
+  <p>Volume - <%= number_with_precision(@budget.volume, precision: 3, significant: true) %> m³</p>
+  <p>Peso - <%= number_with_precision(@budget.weight, precision: 3, significant: true) %> kg</p>
   <p>Distância - <%= @budget.distance %>km</p>
 </div>
 
