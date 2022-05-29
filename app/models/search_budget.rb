@@ -4,6 +4,6 @@ class SearchBudget < ApplicationRecord
   before_create :set_volume
 
   def set_volume
-    self.volume = (height.to_d * width.to_d * depth.to_d) /1000000
+    self.volume = (height * width * depth).to_i
   end
 end

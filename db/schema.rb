@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_27_173321) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_29_024429) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -46,9 +46,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_27_173321) do
   end
 
   create_table "search_budgets", force: :cascade do |t|
-    t.integer "height"
-    t.integer "width"
-    t.integer "depth"
+    t.decimal "height"
+    t.decimal "width"
+    t.decimal "depth"
     t.integer "weight"
     t.integer "volume"
     t.integer "distance"
