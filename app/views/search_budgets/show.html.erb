@@ -1,0 +1,25 @@
+<h1>Consulta de preço número:</h1>
+<div>
+  <p>Volume - 1 m³</p>
+  <p>Peso - <%= @budget.weight %> kg</p>
+  <p>Distância - <%= @budget.distance %>km</p>
+</div>
+
+<div>
+  <table>
+    <tr>
+      <th>Transportadora</th>
+      <th>Valor R$</th>
+      <th>Prazo (dias úteis)</th>
+    </tr>
+    <% if @search_prices.present? %>
+      <% @search_prices.each_pair do |ship_co, price| %>
+        <tr>
+          <td><%= ship_co.brand_name %></td>
+          <td><%= number_to_currency(price[1] / 100, separator: ',' unit: 'R$') %></td>
+          <td><%= price[0] %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
