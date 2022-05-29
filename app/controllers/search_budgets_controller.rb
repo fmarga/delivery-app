@@ -7,9 +7,10 @@ class SearchBudgetsController < ApplicationController
 
   def create
     @budget = SearchBudget.new(set_budgets_params)
+    # @budget.volume = (@budget.height * @budget.width * @budget.depth).to_i
     @budget.admin = current_admin
     @budget.save
-    redirect_to @budget, notice: 'Pesquisa realizada com sucesso'
+    redirect_to search_budget_path(@budget.id), notice: 'Pesquisa realizada com sucesso'
   end
 
   def show
@@ -27,10 +28,10 @@ class SearchBudgetsController < ApplicationController
   def search_prices(budget)
     search_price = {}
     weight_ranges(budget).each do |weight|
-      ship_co = weight.price_setting.shipping_company
+      ship_co = weight.shipping_company
       time_delivery = delivery_time_range(budget)
 
-      final_price = weight.value * budget.distance
+      final_price = weight.distance_value * budget.distance
       search_price[ship_co] = [time_delivery, final_price]
     end
     search_price

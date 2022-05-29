@@ -9,12 +9,12 @@ describe 'Administrador faz busca de orçamentos' do
     click_on 'Realizar orçamento'
 
     expect(page).to have_content 'Consulta de preços'
-    expect(page).to have_field 'Altura (cm)'
-    expect(page).to have_field 'Largura (cm)'
-    expect(page).to have_field 'Profundidade (cm)'
+    expect(page).to have_field 'Altura (m)'
+    expect(page).to have_field 'Largura (m)'
+    expect(page).to have_field 'Profundidade (m)'
     expect(page).to have_field 'Peso (kg)'
     expect(page).to have_field 'Distância (km)'
-    expect(page).to have_button 'Buscar'
+    expect(page).to have_button 'Enviar'
   end
 
   it 'com sucesso' do
@@ -38,12 +38,13 @@ describe 'Administrador faz busca de orçamentos' do
     login_as(admin, :scope => :admin)
     visit root_path
     click_on 'Realizar orçamento'
-    fill_in 'Altura (cm)', with: 100
-    fill_in 'Largura (cm)', with: 100
-    fill_in 'Profundidade (cm)', with: 100
+    fill_in 'Altura (m)', with: 1
+    fill_in 'Largura (m)', with: 1
+    fill_in 'Profundidade (m)', with: 1
+    # fill_in 'Volume (m³)', with: 1
     fill_in 'Peso (kg)', with: 10
     fill_in 'Distância (km)', with: 200
-    click_on 'Buscar'
+    click_on 'Enviar'
 
     expect(page).to have_content 'Pesquisa realizada com sucesso'
     expect(page).to have_content 'Consulta de preço número:'
