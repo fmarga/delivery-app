@@ -41,6 +41,6 @@ class SearchBudgetsController < ApplicationController
   end
 
   def delivery_time_range(budget)
-    time = DeliveryTime.where("min_distance <= ? AND max_distance >= ?", distance: budget.distance, budget.distance)
+    time = DeliveryTime.where("min_distance <= ? AND max_distance >= ?", budget.distance, budget.distance)
   end
 end

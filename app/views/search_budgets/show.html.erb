@@ -16,7 +16,7 @@
       <% @search_prices.each_pair do |ship_co, price| %>
         <tr>
           <td><%= ship_co.brand_name %></td>
-          <td><%= number_to_currency(price[1] / 100, separator: ',' unit: 'R$') %></td>
+          <td><%= (price[1] / 100) %></td>
           <td><%= price[0] %></td>
         </tr>
       <% end %>
