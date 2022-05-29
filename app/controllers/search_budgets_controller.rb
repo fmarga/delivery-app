@@ -7,7 +7,6 @@ class SearchBudgetsController < ApplicationController
 
   def create
     @budget = SearchBudget.new(set_budgets_params)
-    # @budget.volume = (@budget.height * @budget.width * @budget.depth).to_i
     @budget.admin = current_admin
     @budget.save
     redirect_to search_budget_path(@budget.id), notice: 'Pesquisa realizada com sucesso'
@@ -42,6 +41,6 @@ class SearchBudgetsController < ApplicationController
   end
 
   def delivery_time_range(budget)
-    time = DeliveryTime.where("min_distance <= ? AND max_distance >= ?", budget.distance, budget.distance)
+    DeliveryTime.where("min_distance <= ? AND max_distance >= ?", budget.distance, budget.distance)
   end
 end

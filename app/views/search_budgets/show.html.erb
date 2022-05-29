@@ -16,10 +16,12 @@
       <% @search_prices.each_pair do |ship_co, price| %>
         <tr>
           <td><%= ship_co.brand_name %></td>
-          <td><%= (price[1] / 100) %></td>
+          <td><%= number_to_currency(price[1] / 100) %></td>
           <td><%= price[0] %></td>
         </tr>
       <% end %>
+    <% else %>
+      <p>Não existem transportadoras disponíveis para o seu pedido</p>
     <% end %>
   </table>
 </div>
