@@ -29,7 +29,7 @@ Você pode clicar [aqui](https://github.com/users/fmarga/projects/1) para acompa
   $ cd delivery-app
 ```
 
-### Carregue o banco de dados pré-existente
+#### Carregue o banco de dados pré-existente
 
 ```
   $ rails db:seed
