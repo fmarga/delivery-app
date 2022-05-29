@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    models:
+      order: "Ordem de serviço"
+    attributes:
+      order:
+        volume: "Volume do produto (m³)"
+        weight: "Peso do produto (kg)"
+        distance: "Distância (km)"
+        from_address: "Endereço de retirada"
+        from_city: "Cidade de retirada"
+        from_state: "Estado de retirada"
+        to_address: "Endereço de entrega"
+        to_city: "Cidade de entrega"
+        to_state: "Estado de entrega"
+        code: "Código"
+        estimated_delivery_time: "Tempo previsto de entrega"
+        value: "Valor"
+        recipient_name: "Destinatário"

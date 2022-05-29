@@ -25,3 +25,12 @@
     <% end %>
   </table>
 </div>
+
+<div>
+  <p>Deseja enviar ordem de serviço?</p>
+  <%= form_with url: new_order_path, method: 'get' do |f| %>
+    <%= f.label :shipping_company_id, 'Escolha a transportadora' %>
+    <%= f.collection_select :shipping_company_id, @shipping_companies,  :id, :brand_name %>
+    <%= f.submit 'Enviar' %>
+  <% end %>
+</div>
