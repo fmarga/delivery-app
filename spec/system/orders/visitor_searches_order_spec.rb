@@ -18,6 +18,7 @@ describe 'Visitante acessa dados do seu pedido' do
     expect(page).to have_content "Transportadora: Entregas Já"
     expect(page).to have_content "Endereço de origem: Av. do Estado, 50 - São Paulo(SP)"
     expect(page).to have_content "Endereço de destino: Av. do Forte, 9000 - Rio de Janeiro(RJ)"
+    expect(page).to have_content "Veículo responsável: Renault Kangoo - Placa LSN4I49"
     expect(page).to have_content 'Localização do pedido:' 
     within('table') do
       expect(page).to have_content 'Localização'

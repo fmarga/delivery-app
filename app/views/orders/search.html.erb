@@ -6,6 +6,8 @@
   <dd><%= "#{@order.from_address} - #{@order.from_city}(#{@order.from_state})" %></dd>
   <dt>Endereço de destino:</dt>
   <dd><%= "#{@order.to_address} - #{@order.to_city}(#{@order.to_state})" %></dd>
+  <dt>Veículo responsável:</dt>
+  <dd><%= "#{@order.vehicle.brand} #{@order.vehicle.model} - Placa #{@order.vehicle.license_plate}" %></dd>
 </dl>
 <p>Localização do pedido:</p>
 <% if @order.route_deliveries.present? %>
