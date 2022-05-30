@@ -1,6 +1,11 @@
 class OrdersController < ApplicationController
   before_action :authenticate_admin!, only: :new
+  before_action :authenticate_admin_or_user, only: [:index]
 
+  def index
+    @company = user_signed_in? ? current_user.shipping_company : ShippingCompany.find(params[:shipping_company])
+    @orders = @company.orders
+  end
 
   def create
     @order = Order.new(order_params)

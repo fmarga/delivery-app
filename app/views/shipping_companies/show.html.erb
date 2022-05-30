@@ -14,6 +14,10 @@
     </div>
 </section>
 
+<section>
+  <%= link_to 'PEDIDOS', orders_path(shipping_company: @shipping_company) %>
+</section>
+
 <section class="vehicles">
   <h4>VEÍCULOS REGISTRADOS</h4>
   <%= link_to 'Cadastrar veículo', new_shipping_company_vehicle_path(@shipping_company) %>

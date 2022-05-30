@@ -1,0 +1,19 @@
+<h1>Pedidos para <%= @company.brand_name %> </h1>
+<% if @orders.present? %>
+  <table>
+    <tr>
+      <th>Código</th>
+      <th>Data de criação</th>
+      <th>Status</th>
+    </tr>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= link_to order.code, order %></td>
+        <td><%= I18n.l(order.created_at.to_date) %></td>
+        <td><%= I18n.t(order.status) %>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>Não existem pedidos para essa transportadora</p>
+<% end %>
