@@ -5,7 +5,7 @@ class Order < ApplicationRecord
 
   before_validation :generate_code
 
-  enum status: { pending: 0, delivered: 5, canceled: 10 }
+  enum status: { pending: 0, approved: 5, rejected: 10 }
 
   belongs_to :vehicle, optional: true
   belongs_to :shipping_company, optional: true

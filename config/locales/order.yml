@@ -1,7 +1,7 @@
 pt-BR:
   pending: "Pendente"
-  delivered: "Entregue"
-  canceled: "Cancelado"
+  approved: "Aceito"
+  rejected: "Recusado"
   activerecord:
     models:
       order: "Ordem de serviço"

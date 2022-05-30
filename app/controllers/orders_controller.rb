@@ -18,6 +18,20 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  def approved
+    @order = Order.find(params[:id])
+    @order.approved!
+    vehicle = Vehicle.find(params[:vehicle_id])
+    @order.update vehicle: vehicle
+    redirect_to @order, notice: 'Status atualizado com sucesso!'
+  end
+
+  def rejected
+    @order = Order.find(params[:id])
+    @order.rejected!
+    redirect_to @order, notice: 'Seu pedido foi recusado'
+  end
+
   private
 
   def order_params

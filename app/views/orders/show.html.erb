@@ -20,5 +20,20 @@
     <dd> 2 dias úteis</dd>
     <dt>Status do Pedido: </dt>
     <dd><%= I18n.t(@order.status) %> </dd>
+    <% if @order.approved? %>
+      <dt>Veículo responsável: </dt>
+      <dd><%= "#{@order.vehicle.model} - #{@order.vehicle.license_plate}" %> </dd>
+    <% end %>
   </dl>
+  <% if @order.pending? %>
+    <div>
+      <p>Alterar Status do pedido?</p>
+      <%= form_with url: approved_order_path(@order), method: :post do |f| %>
+        <%= f.label :vehicle_id, 'Veículos disponíveis' %>
+        <%= f.collection_select(:vehicle_id, @order.shipping_company.vehicles, :id, :model) %>
+        <%= f.submit 'ACEITAR' %>
+      <% end %>
+      <%= button_to 'RECUSAR', rejected_order_path(@order) %>
+    </div>
+  <% end %>
 </div>
