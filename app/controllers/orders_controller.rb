@@ -3,8 +3,13 @@ class OrdersController < ApplicationController
   before_action :authenticate_admin_or_user, only: [:index]
 
   def index
-    @company = user_signed_in? ? current_user.shipping_company : ShippingCompany.find(params[:shipping_company])
+    @company = user_signed_in? ? current_user.shipping_company : ShippingCompany.find(params[:shipping_company_id])
     @orders = @company.orders
+  end
+
+  def new
+    @order = Order.new(params.permit([:shipping_company_id, :volume, :weight, :distance, :estimated_delivery_time, :value]))
+    @order.shipping_company = ShippingCompany.find(params[:shipping_company_id])
   end
 
   def create
@@ -35,6 +40,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:volume, :weight, :distance, :from_address, :from_city, :from_state, :to_address, :to_city, :to_state, :recipient_name, :shipping_company_id, :value)
+    params.require(:order).permit(:volume, :weight, :distance, :from_address, :from_city, :from_state, :to_address, :to_city, :to_state, :recipient_name, :shipping_company_id, :value, :code)
   end
 end

@@ -1,5 +1,5 @@
 <h1>Consulta de preço número: <%= @budget.id %> </h1>
-<div>
+<div class="search-result">
   <p>Volume - <%= number_with_precision(@budget.volume, precision: 3, significant: true) %> m³</p>
   <p>Peso - <%= number_with_precision(@budget.weight, precision: 3, significant: true) %> kg</p>
   <p>Distância - <%= @budget.distance %>km</p>
@@ -20,66 +20,8 @@
           <td><%= price[0] %></td>
         </tr>
       <% end %>
-
-      <section class="new-order">
-        <p>Deseja enviar ordem de serviço?</p>
-        <%= form_with(model: @order) do |f| %>
-          <div>
-            <%= f.label :shipping_company_id, 'Escolha a transportadora' %>
-            <%= f.collection_select :shipping_company_id, @shipping_companies,  :id, :brand_name %>
-          </div>
-          <div>
-            <%= f.label :volume %>
-            <%= f.number_field :volume %>
-          </div>
-          <div>
-            <%= f.label :weight %>
-            <%= f.number_field :weight %>
-          </div>
-          <div>
-            <%= f.label :distance %>
-            <%= f.number_field :distance %>
-          </div>
-          <div>
-            <%= f.label :from_address %>
-            <%= f.text_field :from_address %>
-          </div>
-          <div>
-            <%= f.label :from_city %>
-            <%= f.text_field :from_city %>
-          </div>
-          <div>
-            <%= f.label :from_state %>
-            <%= f.text_field :from_state %>
-          </div>
-          <div>
-            <%= f.label :to_address %>
-            <%= f.text_field :to_address %>
-          </div>
-          <div>
-            <%= f.label :to_city %>
-            <%= f.text_field :to_city %>
-          </div>
-          <div>
-            <%= f.label :to_state %>
-            <%= f.text_field :to_state %>
-          </div>
-          <div>
-            <%= f.label :recipient_name %>
-            <%= f.text_field :recipient_name %>
-          </div>
-          <div>
-            <%= f.label :value %>
-            <%= f.text_field :value %>
-          </div>
-          <div>
-            <%= f.label :estimated_delivery_time %>
-            <%= f.text_field :estimated_delivery_time %>
-          </div>
-          <div>
-          <%= f.submit 'Enviar' %>
-        <% end %>
-      </section>
+      <p>Deseja enviar ordem de serviço?</p>
+      <%= render 'form' %>
     <% else %>
       <p>Não existem transportadoras disponíveis para o seu pedido</p>
     <% end %>

@@ -24,20 +24,18 @@ describe 'Administrador cadastra uma ordem de serviço' do
     visit root_path
     click_on '1'
 
-    within('.new-order form') do
-      expect(page).to have_content "Volume do produto"
-      expect(page).to have_content "Peso do produto"
-      expect(page).to have_content "Distância"
-      expect(page).to have_field "Endereço de retirada"
-      expect(page).to have_field "Cidade de retirada"
-      expect(page).to have_field "Estado de retirada"
-      expect(page).to have_field "Endereço de entrega"
-      expect(page).to have_field "Cidade de entrega"
-      expect(page).to have_field "Estado de entrega"
-      expect(page).to have_field "Destinatário"
-      expect(page).to have_field "Tempo previsto de entrega"
-      expect(page).to have_button "Enviar"
-    end
+    expect(page).to have_content "Volume do produto"
+    expect(page).to have_content "Peso do produto"
+    expect(page).to have_content "Distância"
+    expect(page).to have_field "Endereço de retirada"
+    expect(page).to have_field "Cidade de retirada"
+    expect(page).to have_field "Estado de retirada"
+    expect(page).to have_field "Endereço de entrega"
+    expect(page).to have_field "Cidade de entrega"
+    expect(page).to have_field "Estado de entrega"
+    expect(page).to have_field "Destinatário"
+    expect(page).to have_field "Tempo previsto de entrega"
+    expect(page).to have_button "Enviar"
   end
 
   it 'com sucesso' do

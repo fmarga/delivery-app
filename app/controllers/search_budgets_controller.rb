@@ -9,7 +9,6 @@ class SearchBudgetsController < ApplicationController
     @budget = SearchBudget.new(set_budgets_params)
     @budget.admin = current_admin
     @budget.save
-    p params
     redirect_to search_budget_path(@budget.id), notice: 'Pesquisa realizada com sucesso'
   end
 
