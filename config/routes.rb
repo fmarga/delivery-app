@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   resources :orders, only: %i[index new create show] do
     post 'approved', on: :member
     post 'rejected', on: :member
+    post 'delivered', on: :member
   end
 end

@@ -7,11 +7,6 @@ class OrdersController < ApplicationController
     @orders = @company.orders
   end
 
-  def new
-    @order = Order.new(params.permit([:shipping_company_id, :volume, :weight, :distance, :estimated_delivery_time, :value]))
-    @order.shipping_company = ShippingCompany.find(params[:shipping_company_id])
-  end
-
   def create
     @order = Order.new(order_params)
     @order.save
@@ -35,6 +30,12 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.rejected!
     redirect_to @order, notice: 'Seu pedido foi recusado'
+  end
+
+  def delivered
+    @order = Order.find(params[:id])
+    @order.delivered!
+    redirect_to @order, notice: 'Pedido finalizado com sucesso'
   end
 
   private

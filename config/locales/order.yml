@@ -2,6 +2,7 @@ pt-BR:
   pending: "Pendente"
   approved: "Aceito"
   rejected: "Recusado"
+  delivered: "Finalizado"
   activerecord:
     models:
       order: "Ordem de serviço"

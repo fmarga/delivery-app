@@ -23,6 +23,8 @@
     <% if @order.approved? %>
       <dt>Veículo responsável: </dt>
       <dd><%= "#{@order.vehicle.model} - #{@order.vehicle.license_plate}" %> </dd>
+      <p>Pedido entregue?</p>
+      <%= button_to 'FINALIZAR', delivered_order_path(@order) %>
     <% end %>
   </dl>
   <% if @order.pending? %>
