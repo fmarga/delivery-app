@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     post 'approved', on: :member
     post 'rejected', on: :member
     post 'delivered', on: :member
+    resources :route_deliveries, only: :create
   end
 end

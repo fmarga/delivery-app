@@ -16,6 +16,9 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @routes = @order.route_deliveries
+    @route = RouteDelivery.new
+
   end
 
   def approved

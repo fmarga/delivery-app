@@ -9,6 +9,7 @@ class Order < ApplicationRecord
 
   belongs_to :vehicle, optional: true
   belongs_to :shipping_company, optional: true
+  has_many :route_deliveries
 
   def generate_code
     self.code = SecureRandom.alphanumeric(15).upcase

@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+    models:
+      route_delivery: "Rota de Entrega"
+    attributes:
+      route_delivery:
+        localization: "Localização"
+        date_and_time: "Data e hora"

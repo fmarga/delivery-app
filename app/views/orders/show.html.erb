@@ -37,5 +37,34 @@
       <% end %>
       <%= button_to 'RECUSAR', rejected_order_path(@order) %>
     </div>
+  <% elsif @order.approved? %>
+    <% if @routes.present? %>
+      <p>Rota de Entrega:</p>
+      <table>
+        <tr>
+          <th>Localização</th>
+          <th>Data e hora</th>
+        </tr>
+        <% @routes.each do |route| %>
+          <tr>
+            <td><%= route.localization %></td>
+            <td><%= I18n.l(route.date_and_time) %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+    <%= form_with model: [@order, @route] do |f| %>
+      <div>
+        <%= f.label :localization, 'Localização' %>
+        <%= f.text_field :localization %>
+      </div>
+      <div>
+        <%= f.label :date_and_time, 'Data e hora' %>
+        <%= f.text_field :date_and_time %>
+      </div>
+      <div>
+        <%= f.submit 'Atualizar localização' %>
+      </div>
+    <% end %>
   <% end %>
 </div>
