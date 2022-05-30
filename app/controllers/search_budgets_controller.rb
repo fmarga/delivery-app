@@ -16,6 +16,7 @@ class SearchBudgetsController < ApplicationController
     @budget = SearchBudget.find(params[:id])
     @search_prices = search_prices(@budget)
     @shipping_companies = @search_prices.keys
+    @order = Order.new
   end
 
   private

@@ -1,0 +1,22 @@
+<h1>Pedido no.</h1>
+<div>
+  <h3>Transportadora: <%= @order.shipping_company.brand_name %> </h3>
+  <dl>
+    <dt>Volume do produto: </dt>
+    <dd><%= @order.volume %> m³</dd>
+    <dt>Peso do produto: </dt>
+    <dd><%= @order.weight %> kg</dd>
+    <dt>Distância: </dt>
+    <dd><%= @order.distance %> km</dd>
+    <dt>Endereço de saída: </dt>
+    <dd><%= "#{@order.from_address} - #{@order.from_city}(#{@order.from_state})" %></dd>
+    <dt>Endereço de chegada: </dt>
+    <dd><%= "#{@order.to_address} - #{@order.to_city}(#{@order.to_state})" %></dd>
+    <dt>Pedido enviado para: </dt>
+    <dd><%= @order.recipient_name %></dd>
+    <dt>Valor: </dt>
+    <dd> <%= number_to_currency(@order.value) %> </dd>
+    <dt>Tempo estimado: </dt>
+    <dd> dias úteis</dd>
+  </dl>
+</div>

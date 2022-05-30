@@ -4,9 +4,9 @@ pt-BR:
       order: "Ordem de serviço"
     attributes:
       order:
-        volume: "Volume do produto (m³)"
-        weight: "Peso do produto (kg)"
-        distance: "Distância (km)"
+        volume: "Volume do produto"
+        weight: "Peso do produto"
+        distance: "Distância"
         from_address: "Endereço de retirada"
         from_city: "Cidade de retirada"
         from_state: "Estado de retirada"
