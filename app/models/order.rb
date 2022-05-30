@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   validates :volume, :weight, :distance, :value, numericality: { greather_than: 0 }
   validates :code, uniqueness: true
 
-  before_validation :generate_code
+  before_validation :generate_code, on: :create
 
   enum status: { pending: 0, approved: 5, rejected: 10 }
 

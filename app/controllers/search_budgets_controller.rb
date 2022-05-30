@@ -9,6 +9,7 @@ class SearchBudgetsController < ApplicationController
     @budget = SearchBudget.new(set_budgets_params)
     @budget.admin = current_admin
     @budget.save
+    p params
     redirect_to search_budget_path(@budget.id), notice: 'Pesquisa realizada com sucesso'
   end
 
@@ -28,11 +29,11 @@ class SearchBudgetsController < ApplicationController
   def search_prices(budget)
     search_price = {}
     weight_ranges(budget).each do |weight|
-      ship_co = weight.shipping_company
-      time_delivery = delivery_time_range(budget)
+      company = weight.shipping_company
+      time_delivery = delivery_time_range(company, budget).time_delivery
 
       final_price = weight.distance_value * budget.distance
-      search_price[ship_co] = [time_delivery, final_price]
+      search_price[company] = [time_delivery, final_price]
     end
     search_price
   end
@@ -41,7 +42,7 @@ class SearchBudgetsController < ApplicationController
     PriceSetting.where("min_weight <= ? AND max_weight >= ? AND min_volume <= ? AND max_volume >= ?", budget.weight, budget.weight, budget.volume, budget.volume)
   end
 
-  def delivery_time_range(budget)
-    DeliveryTime.where("min_distance <= ? AND max_distance >= ?", budget.distance, budget.distance)
+  def delivery_time_range(company, budget)
+    DeliveryTime.where(shipping_company: company).find_by("min_distance <= ? AND max_distance >= ?", budget.distance, budget.distance)
   end
 end
