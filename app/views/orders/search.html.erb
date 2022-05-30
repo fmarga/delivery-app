@@ -1,0 +1,27 @@
+<h1>Pedido no. <%= @order.code %></h1>
+<dl>
+  <dt>Transportadora:</dt>
+  <dd><%= @order.shipping_company.brand_name %></dd>
+  <dt>Endereço de origem:</dt>
+  <dd><%= "#{@order.from_address} - #{@order.from_city}(#{@order.from_state})" %></dd>
+  <dt>Endereço de destino:</dt>
+  <dd><%= "#{@order.to_address} - #{@order.to_city}(#{@order.to_state})" %></dd>
+</dl>
+<p>Localização do pedido:</p>
+<% if @order.route_deliveries.present? %>
+  <table>
+    <tr>
+      <th>Localização</th>
+      <th>Data e hora</th>
+    </tr>
+    <% @order.route_deliveries.each do |route| %>
+      <tr>
+        <td><%= route.localization %></td>
+        <td><%= I18n.l(route.date_and_time) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+<% if @order.delivered? %>
+  <p>Pedido entregue e finalizado com sucesso</p>
+<% end %>

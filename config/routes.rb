@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :delivery_times, only: %i[new create]
   end
   resources :orders, only: %i[index new create show] do
+    get 'search', on: :collection
     post 'approved', on: :member
     post 'rejected', on: :member
     post 'delivered', on: :member

@@ -18,7 +18,11 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @routes = @order.route_deliveries
     @route = RouteDelivery.new
+  end
 
+  def search
+    @order = Order.find_by(code: params[:query])
+    redirect_to root_path, notice: 'Código informado é inválido' if @order.nil?
   end
 
   def approved

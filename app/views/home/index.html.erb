@@ -7,8 +7,19 @@
         <li><%= link_to 'ADMINISTRADOR', new_admin_session_path %></li>
       </ul>
     </nav>
-  <% end %>
-  <% if admin_signed_in? %>
+    <section>
+      <h3>Pesquisa de pedidos</h3>
+      <%= form_with url:search_orders_path, method: :get do |f| %>
+        <div>
+          <%= f.label :query, 'Código da busca' %>
+          <%= f.text_field :query %>
+        </div>
+        <div>
+          <%= f.submit 'PESQUISAR' %>
+        </div>
+      <% end %>
+    </section>
+  <% elsif admin_signed_in? %>
     <div class="budget-btn">
       <%= link_to 'Realizar orçamento', new_search_budget_path %>
     </div>

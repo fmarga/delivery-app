@@ -55,12 +55,12 @@
     <% end %>
     <%= form_with model: [@order, @route] do |f| %>
       <div>
-        <%= f.label :localization, 'Localização' %>
+        <%= f.label :localization %>
         <%= f.text_field :localization %>
       </div>
       <div>
-        <%= f.label :date_and_time, 'Data e hora' %>
-        <%= f.text_field :date_and_time %>
+        <%= f.label :date_and_time %>
+        <%= f.datetime_field :date_and_time %>
       </div>
       <div>
         <%= f.submit 'Atualizar localização' %>
