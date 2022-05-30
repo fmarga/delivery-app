@@ -34,6 +34,8 @@ describe 'Administrador cadastra uma ordem de serviço' do
       expect(page).to have_field "Endereço de entrega"
       expect(page).to have_field "Cidade de entrega"
       expect(page).to have_field "Estado de entrega"
+      expect(page).to have_field "Destinatário"
+      expect(page).to have_field "Tempo previsto de entrega"
       expect(page).to have_button "Enviar"
     end
   end
@@ -67,6 +69,7 @@ describe 'Administrador cadastra uma ordem de serviço' do
     fill_in 'Estado de entrega', with: 'RS'
     fill_in 'Destinatário', with: 'Pessoa Receptora'
     fill_in 'Valor', with: '50'
+    fill_in 'Tempo previsto de entrega', with: '2'
     click_on 'Enviar'
 
     expect(current_path).to eq order_path(1)
@@ -80,6 +83,7 @@ describe 'Administrador cadastra uma ordem de serviço' do
     expect(page).to have_content 'Endereço de chegada: Rua da Entrega, 4000 - São Leopoldo(RS)'
     expect(page).to have_content 'Pedido enviado para: Pessoa Receptora'
     expect(page).to have_content 'Valor: R$ 50,00'
-    expect(page).to have_content 'Tempo estimado: dias úteis'
+    expect(page).to have_content 'Tempo previsto de entrega: 2 dias úteis'
+    expect(page).to have_content 'Status do Pedido: Pendente'
   end
 end

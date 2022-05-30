@@ -16,7 +16,9 @@
     <dd><%= @order.recipient_name %></dd>
     <dt>Valor: </dt>
     <dd> <%= number_to_currency(@order.value) %> </dd>
-    <dt>Tempo estimado: </dt>
-    <dd> dias úteis</dd>
+    <dt>Tempo previsto de entrega: </dt>
+    <dd> 2 dias úteis</dd>
+    <dt>Status do Pedido: </dt>
+    <dd><%= I18n.t(@order.status) %> </dd>
   </dl>
 </div>

@@ -1,4 +1,7 @@
 pt-BR:
+  pending: "Pendente"
+  delivered: "Entregue"
+  canceled: "Cancelado"
   activerecord:
     models:
       order: "Ordem de serviço"
@@ -17,3 +20,4 @@ pt-BR:
         estimated_delivery_time: "Tempo previsto de entrega"
         value: "Valor"
         recipient_name: "Destinatário"
+        status: "Status do Pedido:"
