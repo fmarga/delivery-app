@@ -37,10 +37,10 @@ describe 'Usuário vê área de preços' do
       expect(page).to have_content 'Preço/km'
       expect(page).to have_content '1 - 10'
       expect(page).to have_content '1 - 5'
-      expect(page).to have_content 'R$ 0,50'
+      expect(page).to have_content 'R$ 50,00'
       expect(page).to have_content '11 - 30'
       expect(page).to have_content '6 - 10'
-      expect(page).to have_content 'R$ 0,80'
+      expect(page).to have_content 'R$ 80,00'
     end
   end
 

@@ -22,7 +22,7 @@ describe 'Usuário registra intervalo de preço' do
     within('.prices table') do
       expect(page).to have_content '1 - 5'
       expect(page).to have_content '1 - 10'
-      expect(page).to have_content 'R$ 0,50'
+      expect(page).to have_content 'R$ 50,00'
     end
   end
 
