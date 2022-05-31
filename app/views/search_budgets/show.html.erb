@@ -16,8 +16,8 @@
       <% @search_prices.each_pair do |company, price| %>
         <tr>
           <td><%= company.brand_name %></td>
-          <td><%= number_to_currency(price[1]) %></td>
-          <td><%= price[0] %></td>
+          <td><%= number_to_currency(price[1]/100) %></td>
+          <td><%= price[2] %></td>
         </tr>
       <% end %>
       <p>Deseja enviar ordem de serviço?</p>

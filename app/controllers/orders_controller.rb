@@ -1,10 +1,14 @@
 class OrdersController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create]
-  before_action :authenticate_user!, only: [:index, :show]
+  before_action :authenticate_admin_or_user, only: [:index, :show]
 
   def index
-    @company = current_user.shipping_company
-    @orders = @company.orders
+    if user_signed_in?
+      @company = current_user.shipping_company 
+      @orders = @company.orders
+    else
+      @orders = Order.all
+    end
   end
 
   def new
@@ -13,7 +17,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    redirect_to root_path, notice: 'Ordem de serviço cadastrada com sucesso!'
+    redirect_to orders_path, notice: 'Ordem de serviço cadastrada com sucesso!'
   end
 
   def show

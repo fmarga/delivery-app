@@ -24,10 +24,12 @@
       <dt>Veículo responsável: </dt>
       <dd><%= "#{@order.vehicle.model} - #{@order.vehicle.license_plate}" %> </dd>
       <p>Pedido entregue?</p>
-      <%= button_to 'FINALIZAR', delivered_order_path(@order) %>
+      <% if user_signed_in? %>
+        <%= button_to 'FINALIZAR', delivered_order_path(@order) %>
+      <% end %>
     <% end %>
   </dl>
-  <% if @order.pending? %>
+  <% if @order.pending? && user_signed_in? %>
     <div>
       <p>Alterar Status do pedido?</p>
       <%= form_with url: approved_order_path(@order), method: :post do |f| %>
@@ -37,7 +39,7 @@
       <% end %>
       <%= button_to 'RECUSAR', rejected_order_path(@order) %>
     </div>
-  <% elsif @order.approved? %>
+  <% elsif @order.approved? && user_signed_in?%>
     <% if @routes.present? %>
       <p>Rota de Entrega:</p>
       <table>

@@ -29,10 +29,11 @@ class SearchBudgetsController < ApplicationController
     search_price = {}
     weight_ranges(budget).each do |weight|
       company = weight.shipping_company
-      time_delivery = delivery_time_range(company, budget).time_delivery
+      time_delivery = delivery_time_range(company, budget)
+      time_delivery_view = delivery_time_range(company, budget).time_delivery
 
       final_price = weight.distance_value * budget.distance
-      search_price[company] = [time_delivery, final_price]
+      search_price[company] = [time_delivery, final_price, time_delivery_view]
     end
     search_price
   end

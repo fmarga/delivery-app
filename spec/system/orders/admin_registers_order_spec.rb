@@ -70,7 +70,7 @@ describe 'Administrador cadastra uma ordem de serviço' do
     fill_in 'Tempo previsto de entrega', with: '2'
     click_on 'Enviar'
 
-    expect(current_path).to eq root_path
+    expect(current_path).to eq orders_path
     expect(page).to have_content 'Ordem de serviço cadastrada com sucesso!'
   end
 end
