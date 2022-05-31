@@ -146,3 +146,14 @@ table tr td {
 .field {
   margin: 10px;
 }
+
+.search {
+  max-width: 1000px;
+  margin: auto;
+  padding: 5px;
+}
+
+.search input {
+  width: 200px;
+  margin: 10px;
+}
