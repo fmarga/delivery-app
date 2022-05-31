@@ -134,3 +134,15 @@ table tr td {
   margin: 10px;
   padding: 10px;
 }
+
+.login {
+  margin: auto;
+}
+
+.login input {
+  max-width: 500px;
+}
+
+.field {
+  margin: 10px;
+}
