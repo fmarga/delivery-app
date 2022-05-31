@@ -59,7 +59,7 @@
         <tr>
           <td><%= "#{price.min_weight} - #{price.max_weight}" %></td>
           <td><%= "#{price.min_volume} - #{price.max_volume}" %></td>
-          <td><%= number_to_currency(price.distance_value / 100.to_d, separator: ",", unit: "R$") %></td>
+          <td><%= number_to_currency(price.distance_value) %></td>
         </tr>
       <% end %>
     <% else %>
