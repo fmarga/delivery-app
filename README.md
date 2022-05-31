@@ -1,5 +1,44 @@
 <h1 align="center">Delivery App</h1>
 
+## Como a aplicação funciona
+
+É um sistema capaz de gerenciar entregas de produtos previamente cadastrados, através de uma consulta (realizada por pessoa administradora) que escolhe a transportadora disponível que atenda aos critérios do produto. Para isso, a aplicação conta com três tipos de acesso:
+
+- Administrador
+- Usuário da transportadora
+- Visitante
+
+#### Administrador:
+
+- Capaz de cadastrar novas transportadoras
+- Capaz de consultar preços e prazos
+- Capaz de criar ordem de serviço de uma transportadora
+- Acesso do administrador cadastrado no banco de dados:
+
+```
+  email: admin@sistemadefrete.com.br
+  password: password
+```
+
+#### Usuário:
+
+- Capaz de acessar somente a transportadora a que está vinculado (vínculo através do domínio de e-mail)
+- Capaz de cadastrar veículos que serão utilizados nas entregas
+- Capaz de configurar preços e prazos de entrega
+- Capaz de ver e atualizar ordem de serviço
+- Acesso do administrador cadastrado no banco de dados:
+
+```
+  email: user@entregasja.com.br
+  password: password
+```
+
+#### Visitante:
+
+- Capaz de acessar a página inicial e pesquisar pelo seu pedido informando seu código
+
+---
+
 ## Descrição do Projeto
 
 Projeto final desenvolvido na Etapa 1 do Programa TreinaDev realizado pela [Campus Code](https://www.campuscode.com.br/), consiste em uma aplicação web responsável por gerenciar meios de transporte disponíveis para e-commerces utilizando <strong>Ruby on Rails</strong>.
@@ -58,36 +97,4 @@ Você pode clicar [aqui](https://github.com/users/fmarga/projects/1) para acompa
 ```
   $ cd delivery-app
   $ rspec
-```
-
-<!--
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-- Ruby version
-
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
-  -->
-
-```
-
 ```
