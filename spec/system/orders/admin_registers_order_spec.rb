@@ -70,18 +70,7 @@ describe 'Administrador cadastra uma ordem de serviço' do
     fill_in 'Tempo previsto de entrega', with: '2'
     click_on 'Enviar'
 
-    expect(current_path).to eq order_path(1)
+    expect(current_path).to eq root_path
     expect(page).to have_content 'Ordem de serviço cadastrada com sucesso!'
-    expect(page).to have_content 'Pedido no.'
-    expect(page).to have_content 'Transportadora: Entregas Já'
-    expect(page).to have_content 'Volume do produto: 1 m³'
-    expect(page).to have_content 'Peso do produto: 10 kg'
-    expect(page).to have_content 'Distância: 100 km'
-    expect(page).to have_content 'Endereço de saída: Av. da Retirada, 10 - Porto Alegre(RS)'
-    expect(page).to have_content 'Endereço de chegada: Rua da Entrega, 4000 - São Leopoldo(RS)'
-    expect(page).to have_content 'Pedido enviado para: Pessoa Receptora'
-    expect(page).to have_content 'Valor: R$ 50,00'
-    expect(page).to have_content 'Tempo previsto de entrega: 2 dias úteis'
-    expect(page).to have_content 'Status do Pedido: Pendente'
   end
 end

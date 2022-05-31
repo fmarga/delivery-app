@@ -1,17 +1,19 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_admin!, only: :new
-  before_action :authenticate_admin_or_user, only: [:index]
+  before_action :authenticate_admin!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @company = user_signed_in? ? current_user.shipping_company : ShippingCompany.find(params[:shipping_company_id])
+    @company = current_user.shipping_company
     @orders = @company.orders
+  end
+
+  def new
+    @order = Order.new
   end
 
   def create
     @order = Order.new(order_params)
-    @order.save
-
-    redirect_to order_path(@order), notice: 'Ordem de serviço cadastrada com sucesso!'
+    redirect_to root_path, notice: 'Ordem de serviço cadastrada com sucesso!'
   end
 
   def show
@@ -48,6 +50,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:volume, :weight, :distance, :from_address, :from_city, :from_state, :to_address, :to_city, :to_state, :recipient_name, :shipping_company_id, :value, :code)
+    params.require(:order).permit(:volume, :weight, :distance, :from_address, :from_city, :from_state, :to_address, :to_city, :to_state, :recipient_name, :shipping_company_id, :value, :code, :estimated_delivery_time)
   end
 end
